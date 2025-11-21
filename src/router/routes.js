@@ -4,9 +4,23 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       {
-        path: 'dashboard',
+        path: '',
+        redirect: '/todo',
+      },
+      {
+        path: 'todo',
         component: () => import('pages/IndexPage.vue'),
         meta: { requiresAuth: true },
+      },
+      {
+        path: 'profile',
+        component: () => import('pages/UserProfilePage.vue'),
+        meta: { requiresAuth: true },
+      },
+      // Keep dashboard as redirect for backwards compatibility
+      {
+        path: 'dashboard',
+        redirect: '/todo',
       },
     ],
   },

@@ -29,7 +29,7 @@ export async function handleAuthRequest(store, requestFn, router) {
     accessTokenExpiry: expiry,
   })
 
-  router.push('/dashboard')
+  router.push('/todo')
   return true
 }
 
