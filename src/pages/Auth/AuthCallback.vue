@@ -99,7 +99,7 @@ onMounted(async () => {
       })
       
       // Redirect to dashboard
-      router.push('/dashboard')
+      router.push('/todo')
     } else {
       // OAuth login failed - show error and redirect to login
       if (result.error) {

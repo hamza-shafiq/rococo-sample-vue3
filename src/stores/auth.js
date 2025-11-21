@@ -134,9 +134,11 @@ export const useAuthStore = defineStore('auth', {
      */
     async setPassword(token, uidb64, payload) {
       try {
+        const encodedToken = encodeURIComponent(token)
+        const encodedUid = encodeURIComponent(uidb64)
         return await handleAuthRequest(
           this,
-          () => axios.post(`/auth/reset_password/${token}/${uidb64}`, payload),
+          () => axios.post(`/auth/reset_password/${encodedToken}/${encodedUid}`, payload),
           this.router,
         )
       } catch (error) {
@@ -149,7 +151,7 @@ export const useAuthStore = defineStore('auth', {
      */
     async requestPasswordReset(email) {
       try {
-        const response = await axios.post('/auth/request_password_reset', { email })
+        const response = await axios.post('/auth/forgot_password', { email })
 
         if (response.data?.success) {
           Notify.create({

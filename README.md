@@ -1,6 +1,6 @@
-# Rococo Sample App (rococo-sample-vue3)
+# Switchback App (switchback-vue3)
 
-A Vue3 starting point for rococo-based web apps
+A Vue3 starting point for switchback web apps
 
 ## Install the dependencies
 ```bash
